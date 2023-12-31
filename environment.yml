@@ -1,0 +1,6 @@
+name: logo
+channels:
+  - defaults
+dependencies:
+  - drawsvg
+prefix: /home/sdemiriz/.conda/envs/logo
