@@ -4,5 +4,5 @@
 <defs>
 </defs>
 <rect x="0" y="0" width="500" height="500" fill="#3b4252" />
-<path d="M100,400 C120,420,380,80,400,100" stroke="#ff0000" fill="none" stroke-width="3" />
+<path d="M400,100 C100,150,400,300,400,400" stroke="#ff0000" fill="none" stroke-width="30" />
 </svg>

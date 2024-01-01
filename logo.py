@@ -22,8 +22,10 @@ nord = [
 d = dw.Drawing(500, 500, id_prefix="pic")
 d.append(dw.Rectangle(0, 0, 500, 500, fill=nord[1]))
 
-p = dw.Path(stroke="#ff0000", fill="none", stroke_width=3)
-p.M(100, 400).C(120, 420, 380, 80, 400, 100)
+start = (400, 100)
+end = (400, 400)
+p = dw.Path(stroke="#ff0000", fill="none", stroke_width=30)
+p.M(*start).C(100, 150, 400, 300, *end)
 d.append(p)
 
 
