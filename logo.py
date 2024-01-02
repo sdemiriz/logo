@@ -22,15 +22,19 @@ nord = [
 d = dw.Drawing(500, 500, id_prefix="pic")
 d.append(dw.Rectangle(0, 0, 500, 500, fill=nord[1]))
 
+r = dw.Rectangle(166, 80, 219, 200)
+clip = dw.ClipPath()
+clip.append(r)
+
 start = (400, 100)
-psm_1 = (350, 150)
-psm_2 = (150, 100)
+psm_1 = (380, 160)
+psm_2 = (150, 120)
 mid = (150, 200)
 psm_3 = (150, 250)
 psm_4 = (350, 250)
 end = (400, 400)
 
-p = dw.Path(stroke=nord[10], fill="none", stroke_width=30)
+p = dw.Path(stroke=nord[10], fill="none", stroke_width=30, clip_path=clip)
 p2 = dw.Path(stroke=nord[8], fill="none", stroke_width=30)
 p.M(*start).C(*psm_1, *psm_2, *mid)
 p2.M(*mid).C(*psm_3, *psm_4, *end)
