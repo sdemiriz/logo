@@ -19,11 +19,18 @@ nord = [
     "#b48ead",
 ]
 
-type coord = tuple[float, float]
-
 
 class Curve:
-    def __init__(self, drawing: dw.Drawing, start: coord, end: coord, offset: coord, translate: coord, color: str, debug: bool):
+    def __init__(
+        self,
+        drawing: dw.Drawing,
+        start: tuple,
+        end: tuple,
+        offset: tuple,
+        translate: tuple,
+        color: str,
+        debug: bool,
+    ):
         self.start = start
         self.end = end
         self.offset = offset
@@ -46,9 +53,12 @@ class Curve:
         drawing.append(self.path)
 
         if self.debug:
-            drawing.append(dw.Circle(*self.handle1, 5, stroke="#ff0000", fill="#ff0000"))
-            drawing.append(dw.Circle(*self.handle2, 5, stroke="#ff0000", fill="#ff0000"))
-
+            drawing.append(
+                dw.Circle(*self.handle1, 5, stroke="#ff0000", fill="#ff0000")
+            )
+            drawing.append(
+                dw.Circle(*self.handle2, 5, stroke="#ff0000", fill="#ff0000")
+            )
 
 
 d = dw.Drawing(500, 500, id_prefix="pic")
