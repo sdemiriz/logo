@@ -22,28 +22,43 @@ nord = [
 d = dw.Drawing(500, 500, id_prefix="pic")
 d.append(dw.Rectangle(0, 0, 500, 500, fill=nord[1]))
 
-r = dw.Rectangle(176, 80, 200, 200)
-clip = dw.ClipPath()
-clip.append(r)
 
-r2 = dw.Rectangle(176, 150, 200, 200)
-clip2 = dw.ClipPath()
-clip2.append(r2)
+r = dw.Rectangle(125, 80, 250, 200)
 
-start = (400, 100)
-mid1 = (150, 200)
-offset1 = (0, 100)
+start = (400, 50)
+mid1 = (100, 250)
+offset1 = (0, 150)
 psm1 = (start[0] + offset1[0], start[1] + offset1[1])
 psm2 = (mid1[0] - offset1[0], mid1[1] - offset1[1])
 
-mid2 = (150, 150)
-end = (400, 350)
-offset2 = (50, 100)
+
+r2 = dw.Rectangle(125, 175, 250, 300)
+
+mid2 = (100, 150)
+end = (400, 500)
+offset2 = (0, 175)
 psm3 = (mid2[0] + offset2[0], mid2[1] + offset2[1])
 psm4 = (end[0] - offset2[0], end[1] - offset2[1])
 
-p = dw.Path(stroke=nord[1], fill="none", stroke_width=30, clip_path=clip)
-p2 = dw.Path(stroke=nord[10], fill="none", stroke_width=30, clip_path=clip2)
+clip = dw.ClipPath()
+clip.append(r)
+p = dw.Path(
+    stroke=nord[9],
+    fill="none",
+    stroke_width=30,
+    clip_path=clip,
+    transform="translate(0, -50)",
+)
+
+clip2 = dw.ClipPath()
+clip2.append(r2)
+p2 = dw.Path(
+    stroke=nord[10],
+    fill="none",
+    stroke_width=30,
+    clip_path=clip2,
+    transform="translate(0, -80)",
+)
 p.M(*start).C(*psm1, *psm2, *mid1)
 p2.M(*mid2).C(*psm3, *psm4, *end)
 
