@@ -26,6 +26,10 @@ r = dw.Rectangle(166, 80, 219, 200)
 clip = dw.ClipPath()
 clip.append(r)
 
+r2 = dw.Rectangle(166, 150, 219, 200)
+clip2 = dw.ClipPath()
+clip2.append(r2)
+
 start = (400, 100)
 psm_1 = (380, 160)
 psm_2 = (150, 120)
@@ -35,7 +39,7 @@ psm_4 = (350, 250)
 end = (400, 400)
 
 p = dw.Path(stroke=nord[10], fill="none", stroke_width=30, clip_path=clip)
-p2 = dw.Path(stroke=nord[8], fill="none", stroke_width=30)
+p2 = dw.Path(stroke=nord[8], fill="none", stroke_width=30, clip_path=clip2)
 p.M(*start).C(*psm_1, *psm_2, *mid)
 p2.M(*mid).C(*psm_3, *psm_4, *end)
 
