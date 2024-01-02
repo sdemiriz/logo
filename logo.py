@@ -19,6 +19,38 @@ nord = [
     "#b48ead",
 ]
 
+type coord = tuple[float, float]
+
+
+class Curve:
+    def __init__(self, drawing: dw.Drawing, start: coord, end: coord, offset: coord, translate: coord, color: str, debug: bool):
+        self.start = start
+        self.end = end
+        self.offset = offset
+        self.color = color
+        self.translate = translate
+        self.stroke_width = 30
+        self.debug = debug
+
+        self.handle1 = (self.start[0] + self.offset[0], self.start[1] + self.offset[1])
+        self.handle2 = (self.end[0] - self.offset[0], self.end[1] - self.offset[1])
+
+        self.path = dw.Path(
+            stroke=self.color,
+            fill="none",
+            stroke_width=self.stroke_width,
+            transform=f"translate({self.translate[0]}, {self.translate[1]})",
+        )
+        self.path.M(*self.start).C(*self.handle1, *self.handle2, *self.end)
+
+        drawing.append(self.path)
+
+        if self.debug:
+            drawing.append(dw.Circle(*self.handle1, 5, stroke="#ff0000", fill="#ff0000"))
+            drawing.append(dw.Circle(*self.handle2, 5, stroke="#ff0000", fill="#ff0000"))
+
+
+
 d = dw.Drawing(500, 500, id_prefix="pic")
 d.append(dw.Rectangle(0, 0, 500, 500, fill=nord[1]))
 
@@ -31,6 +63,7 @@ offset1 = (0, 150)
 psm1 = (start[0] + offset1[0], start[1] + offset1[1])
 psm2 = (mid1[0] - offset1[0], mid1[1] - offset1[1])
 
+Curve(d, start, mid1, offset1, (0, 0), nord[15], True)
 
 r2 = dw.Rectangle(125, 175, 250, 300)
 
@@ -40,34 +73,6 @@ offset2 = (0, 175)
 psm3 = (mid2[0] + offset2[0], mid2[1] + offset2[1])
 psm4 = (end[0] - offset2[0], end[1] - offset2[1])
 
-clip = dw.ClipPath()
-clip.append(r)
-p = dw.Path(
-    stroke=nord[9],
-    fill="none",
-    stroke_width=30,
-    clip_path=clip,
-    transform="translate(0, -50)",
-)
-
-clip2 = dw.ClipPath()
-clip2.append(r2)
-p2 = dw.Path(
-    stroke=nord[10],
-    fill="none",
-    stroke_width=30,
-    clip_path=clip2,
-    transform="translate(0, -80)",
-)
-p.M(*start).C(*psm1, *psm2, *mid1)
-p2.M(*mid2).C(*psm3, *psm4, *end)
-
-d.append(p2)
-d.append(p)
-d.append(dw.Circle(*psm1, 5, stroke="#ffffff", fill="#ffffff"))
-d.append(dw.Circle(*psm2, 5, stroke="#000000", fill="#000000"))
-d.append(dw.Circle(*psm3, 5, stroke="#00ff00", fill="#00ff00"))
-d.append(dw.Circle(*psm4, 5, stroke="#0000ff", fill="#0000ff"))
-
+Curve(d, mid2, end, offset2, (0, 0), nord[14], True)
 
 d.save_svg("logo.svg")
