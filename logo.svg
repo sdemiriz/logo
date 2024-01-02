@@ -5,12 +5,15 @@
 <clipPath id="pic0">
 <rect x="166" y="80" width="219" height="200" />
 </clipPath>
+<clipPath id="pic1">
+<rect x="166" y="150" width="219" height="200" />
+</clipPath>
 </defs>
 <rect x="0" y="0" width="500" height="500" fill="#3b4252" />
 <path d="M400,100 C380,160,150,120,150,200" stroke="#5e81ac" fill="none" stroke-width="30" clip-path="url(#pic0)" />
-<path d="M150,200 C150,250,350,250,400,400" stroke="#88c0d0" fill="none" stroke-width="30" />
+<path d="M150,150 C150,200,350,200,400,350" stroke="#88c0d0" fill="none" stroke-width="30" clip-path="url(#pic1)" />
 <circle cx="380" cy="160" r="5" stroke="#ffffff" fill="#ffffff" />
 <circle cx="150" cy="120" r="5" stroke="#000000" fill="#000000" />
-<circle cx="150" cy="250" r="5" stroke="#00ff00" fill="#00ff00" />
-<circle cx="350" cy="250" r="5" stroke="#0000ff" fill="#0000ff" />
+<circle cx="150" cy="200" r="5" stroke="#00ff00" fill="#00ff00" />
+<circle cx="350" cy="200" r="5" stroke="#0000ff" fill="#0000ff" />
 </svg>
