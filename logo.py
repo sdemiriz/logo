@@ -60,9 +60,6 @@ r = dw.Rectangle(125, 80, 250, 200)
 start = (400, 50)
 mid1 = (100, 250)
 offset1 = (0, 150)
-psm1 = (start[0] + offset1[0], start[1] + offset1[1])
-psm2 = (mid1[0] - offset1[0], mid1[1] - offset1[1])
-
 Curve(d, start, mid1, offset1, (0, 0), nord[15], True)
 
 r2 = dw.Rectangle(125, 175, 250, 300)
@@ -70,9 +67,6 @@ r2 = dw.Rectangle(125, 175, 250, 300)
 mid2 = (100, 150)
 end = (400, 500)
 offset2 = (0, 175)
-psm3 = (mid2[0] + offset2[0], mid2[1] + offset2[1])
-psm4 = (end[0] - offset2[0], end[1] - offset2[1])
-
 Curve(d, mid2, end, offset2, (0, 0), nord[14], True)
 
 d.save_svg("logo.svg")
