@@ -31,9 +31,10 @@ clip2 = dw.ClipPath()
 clip2.append(r2)
 
 start = (400, 100)
-psm_1 = (380, 160)
-psm_2 = (150, 120)
 mid = (150, 200)
+offset = (0, 100)
+psm_1 = (start[0] + offset[0], start[1] + offset[1])
+psm_2 = (mid[0] - offset[0], mid[1] - offset[1])
 
 mid2 = (150, 150)
 psm_3 = (150, 200)
