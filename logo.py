@@ -29,24 +29,41 @@ class Curve:
         offset: tuple,
         translate: tuple,
         color: str,
+        rect_offset: int,
         debug: bool,
     ):
         self.start = start
         self.end = end
         self.offset = offset
         self.color = color
+        self.rect_offset = rect_offset
         self.translate = translate
         self.stroke_width = 30
         self.debug = debug
 
-        self.handle1 = (self.start[0] + self.offset[0], self.start[1] + self.offset[1])
-        self.handle2 = (self.end[0] - self.offset[0], self.end[1] - self.offset[1])
+        self.handle1 = (self.start[0] - self.offset[0], self.start[1] - self.offset[1])
+        self.handle2 = (self.end[0] + self.offset[0], self.end[1] + self.offset[1])
+
+        r = dw.Rectangle(
+            min(self.start[0], self.end[0]) + self.rect_offset,
+            0,
+            abs(self.start[0] - self.end[0]) - 2 * self.rect_offset,
+            500,
+            stroke="#ff0000",
+            fill="none",
+        )
+
+        drawing.append(r)
+
+        clip = dw.ClipPath()
+        clip.append(r)
 
         self.path = dw.Path(
             stroke=self.color,
             fill="none",
             stroke_width=self.stroke_width,
             transform=f"translate({self.translate[0]}, {self.translate[1]})",
+            clip_path=clip,
         )
         self.path.M(*self.start).C(*self.handle1, *self.handle2, *self.end)
 
@@ -67,16 +84,34 @@ d.append(dw.Rectangle(0, 0, 500, 500, fill=nord[1]))
 
 r = dw.Rectangle(125, 80, 250, 200)
 
-start = (400, 50)
-mid1 = (100, 250)
+start = (100, 250)
+end = (400, 50)
 offset1 = (0, 150)
-Curve(d, start, mid1, offset1, (0, 0), nord[15], True)
+Curve(
+    drawing=d,
+    start=start,
+    end=end,
+    offset=offset1,
+    translate=(0, 0),
+    rect_offset=30,
+    color=nord[15],
+    debug=False,
+)
 
 r2 = dw.Rectangle(125, 175, 250, 300)
 
-mid2 = (100, 150)
-end = (400, 500)
-offset2 = (0, 175)
-Curve(d, mid2, end, offset2, (0, 0), nord[14], True)
+start = (100, 150)
+end = (400, 400)
+offset = (-100, 50)
+Curve(
+    drawing=d,
+    start=start,
+    end=end,
+    offset=offset,
+    translate=(0, 40),
+    rect_offset=30,
+    color=nord[14],
+    debug=False,
+)
 
 d.save_svg("logo.svg")

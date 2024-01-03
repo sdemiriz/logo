@@ -3,17 +3,15 @@
      width="500" height="500" viewBox="0 0 500 500">
 <defs>
 <clipPath id="pic0">
-<rect x="166" y="80" width="219" height="200" />
+<rect x="130" y="0" width="240" height="500" stroke="#ff0000" fill="none" />
 </clipPath>
 <clipPath id="pic1">
-<rect x="166" y="150" width="219" height="200" />
+<rect x="130" y="0" width="240" height="500" stroke="#ff0000" fill="none" />
 </clipPath>
 </defs>
 <rect x="0" y="0" width="500" height="500" fill="#3b4252" />
-<path d="M400,100 C380,160,150,120,150,200" stroke="#5e81ac" fill="none" stroke-width="30" clip-path="url(#pic0)" />
-<path d="M150,150 C150,200,350,200,400,350" stroke="#88c0d0" fill="none" stroke-width="30" clip-path="url(#pic1)" />
-<circle cx="380" cy="160" r="5" stroke="#ffffff" fill="#ffffff" />
-<circle cx="150" cy="120" r="5" stroke="#000000" fill="#000000" />
-<circle cx="150" cy="200" r="5" stroke="#00ff00" fill="#00ff00" />
-<circle cx="350" cy="200" r="5" stroke="#0000ff" fill="#0000ff" />
+<use xlink:href="#pic2" />
+<path d="M100,250 C100,100,400,200,400,50" stroke="#b48ead" fill="none" stroke-width="30" transform="translate(0, 0)" clip-path="url(#pic0)" />
+<use xlink:href="#pic3" />
+<path d="M100,150 C200,100,300,450,400,400" stroke="#a3be8c" fill="none" stroke-width="30" transform="translate(0, 40)" clip-path="url(#pic1)" />
 </svg>
