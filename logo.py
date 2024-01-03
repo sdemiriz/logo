@@ -28,6 +28,7 @@ class Curve:
         end: tuple,
         offset: tuple,
         translate: tuple,
+        scale: tuple,
         color: str,
         debug: bool,
     ):
@@ -36,6 +37,7 @@ class Curve:
         self.offset = offset
         self.color = color
         self.translate = translate
+        self.scale = scale
         self.stroke_width = 2
         self.debug = debug
 
@@ -46,7 +48,7 @@ class Curve:
             stroke=self.color,
             fill="none",
             stroke_width=self.stroke_width,
-            transform=f"translate({self.translate[0]}, {self.translate[1]})",
+            transform=f"translate({self.translate[0]}, {self.translate[1]}) scale({self.scale[0]}, {self.scale[1]})",
         )
         self.path.M(*self.start).C(*self.handle1, *self.handle2, *self.end)
 
@@ -73,8 +75,8 @@ class Curve:
             )
 
 
-d = dw.Drawing(500, 500, id_prefix="pic")
-d.append(dw.Rectangle(0, 0, 500, 500, fill=nord[1]))
+d = dw.Drawing(1000, 1000, id_prefix="pic")
+d.append(dw.Rectangle(0, 0, 1000, 1000, fill=nord[1]))
 
 start = (100, 200)
 end = (400, 500)
@@ -85,7 +87,20 @@ for i in range(0, 50):
         start=start,
         end=end,
         offset=offset,
-        translate=(0, -i - 7),
+        translate=(0, -i),
+        scale=(1, 1),
+        color=nord[10],
+        debug=False,
+    )
+
+for i in range(0, 50):
+    Curve(
+        drawing=d,
+        start=start,
+        end=end,
+        offset=offset,
+        translate=(0, -i - 90),
+        scale=(1, 1),
         color=nord[10],
         debug=False,
     )
@@ -100,6 +115,19 @@ for i in range(50):
         end=end,
         offset=offset1,
         translate=(0, i),
+        scale=(1, 1),
+        color=nord[9],
+        debug=False,
+    )
+
+for i in range(50):
+    Curve(
+        drawing=d,
+        start=start,
+        end=end,
+        offset=offset1,
+        translate=(0, i + 360),
+        scale=(1, 1),
         color=nord[9],
         debug=False,
     )
