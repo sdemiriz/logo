@@ -107,23 +107,23 @@ Curve(
     translate=(0, 0),
     rect_offset=30,
     color=nord[15],
-    debug=False,
+    debug=True,
 )
 
 r2 = dw.Rectangle(125, 175, 250, 300)
 
 start = (100, 150)
 end = (400, 400)
-offset = (-100, 50)
+offset = (0, 0)
 Curve(
     drawing=d,
     start=start,
     end=end,
     offset=offset,
-    translate=(0, 40),
+    translate=(0, 0),
     rect_offset=30,
     color=nord[14],
-    debug=False,
+    debug=True,
 )
 
 d.save_svg("logo.svg")
