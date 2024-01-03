@@ -29,14 +29,12 @@ class Curve:
         offset: tuple,
         translate: tuple,
         color: str,
-        rect_offset: int,
         debug: bool,
     ):
         self.start = start
         self.end = end
         self.offset = offset
         self.color = color
-        self.rect_offset = rect_offset
         self.translate = translate
         self.stroke_width = 2
         self.debug = debug
@@ -44,26 +42,11 @@ class Curve:
         self.handle1 = (self.start[0] - self.offset[0], self.start[1] - self.offset[1])
         self.handle2 = (self.end[0] + self.offset[0], self.end[1] + self.offset[1])
 
-        r = dw.Rectangle(
-            min(self.start[0], self.end[0]) + self.rect_offset,
-            0,
-            abs(self.start[0] - self.end[0]) - 2 * self.rect_offset,
-            500,
-            stroke="#ff0000",
-            fill="none",
-        )
-
-        drawing.append(r)
-
-        clip = dw.ClipPath()
-        clip.append(r)
-
         self.path = dw.Path(
             stroke=self.color,
             fill="none",
             stroke_width=self.stroke_width,
             transform=f"translate({self.translate[0]}, {self.translate[1]})",
-            clip_path=clip,
         )
         self.path.M(*self.start).C(*self.handle1, *self.handle2, *self.end)
 
@@ -93,6 +76,20 @@ class Curve:
 d = dw.Drawing(500, 500, id_prefix="pic")
 d.append(dw.Rectangle(0, 0, 500, 500, fill=nord[1]))
 
+start = (100, 200)
+end = (400, 500)
+offset = (0, -100)
+for i in range(0, 50):
+    Curve(
+        drawing=d,
+        start=start,
+        end=end,
+        offset=offset,
+        translate=(0, -i - 7),
+        color=nord[10],
+        debug=False,
+    )
+
 start = (100, 150)
 end = (400, 0)
 offset1 = (-25, 100)
@@ -103,23 +100,7 @@ for i in range(50):
         end=end,
         offset=offset1,
         translate=(0, i),
-        rect_offset=0,
         color=nord[9],
-        debug=False,
-    )
-
-start = (100, 200)
-end = (400, 500)
-offset = (0, -100)
-for i in range(0, 50):
-    Curve(
-        drawing=d,
-        start=start,
-        end=end,
-        offset=offset,
-        translate=(0, -i + 3),
-        rect_offset=0,
-        color=nord[10],
         debug=False,
     )
 
