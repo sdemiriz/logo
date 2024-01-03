@@ -93,37 +93,35 @@ class Curve:
 d = dw.Drawing(500, 500, id_prefix="pic")
 d.append(dw.Rectangle(0, 0, 500, 500, fill=nord[1]))
 
-
-r = dw.Rectangle(125, 80, 250, 200)
-
-start = (100, 250)
-end = (400, 50)
-offset1 = (0, 150)
-Curve(
-    drawing=d,
-    start=start,
-    end=end,
-    offset=offset1,
-    translate=(0, 0),
-    rect_offset=30,
-    color=nord[15],
-    debug=True,
-)
-
-r2 = dw.Rectangle(125, 175, 250, 300)
-
 start = (100, 150)
-end = (400, 400)
-offset = (0, 0)
-Curve(
-    drawing=d,
-    start=start,
-    end=end,
-    offset=offset,
-    translate=(0, 0),
-    rect_offset=30,
-    color=nord[14],
-    debug=True,
-)
+end = (400, 0)
+offset1 = (-25, 100)
+for i in range(50):
+    Curve(
+        drawing=d,
+        start=start,
+        end=end,
+        offset=offset1,
+        translate=(0, i),
+        rect_offset=0,
+        color=nord[9],
+        debug=False,
+    )
+
+start = (100, 200)
+end = (400, 500)
+offset = (0, -100)
+for i in range(0, 50):
+    Curve(
+        drawing=d,
+        start=start,
+        end=end,
+        offset=offset,
+        translate=(0, -i + 3),
+        rect_offset=0,
+        color=nord[10],
+        debug=False,
+    )
+
 
 d.save_svg("logo.svg")
