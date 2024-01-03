@@ -38,7 +38,7 @@ class Curve:
         self.color = color
         self.rect_offset = rect_offset
         self.translate = translate
-        self.stroke_width = 30
+        self.stroke_width = 2
         self.debug = debug
 
         self.handle1 = (self.start[0] - self.offset[0], self.start[1] - self.offset[1])
