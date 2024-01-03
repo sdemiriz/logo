@@ -71,10 +71,22 @@ class Curve:
 
         if self.debug:
             drawing.append(
-                dw.Circle(*self.handle1, 5, stroke="#ff0000", fill="#ff0000")
+                dw.Circle(
+                    self.handle1[0] + self.translate[0],
+                    self.handle1[1] + self.translate[1],
+                    5,
+                    stroke="#ff0000",
+                    fill="#ff0000",
+                )
             )
             drawing.append(
-                dw.Circle(*self.handle2, 5, stroke="#ff0000", fill="#ff0000")
+                dw.Circle(
+                    self.handle2[0] + self.translate[0],
+                    self.handle2[1] + self.translate[1],
+                    5,
+                    stroke="#ff0000",
+                    fill="#ff0000",
+                )
             )
 
 
