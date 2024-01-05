@@ -2,11 +2,12 @@ import drawsvg as dw
 import curve as c
 import nord as n
 
-d = dw.Drawing(500, 500, id_prefix="pic")
-d.append(dw.Rectangle(0, 0, 500, 500, fill=n.nord[1]))
+# minor: 12, mojor: 22
+d = dw.Drawing(1000, 1000, id_prefix="pic")
+d.append(dw.Rectangle(0, 0, 1000, 1000, fill=n.nord[1]))
 
-start_major = (350, 350)
-size = (300, 300)
+start_major = (300, 350)
+size = (400, 300)
 copy_offset = (0, -100)
 offset = (0, -100)
 
