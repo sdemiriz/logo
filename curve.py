@@ -8,7 +8,7 @@ class Curve:
         start: tuple,
         end: tuple,
         offset: tuple,
-        scale: tuple = (0, 0),
+        scale: tuple = (1, 1),
         height_offset: int = 0,
         color: str = "#ff0000",
         debug: bool = False,
