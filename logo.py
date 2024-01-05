@@ -125,17 +125,19 @@ Curve(
     debug=False,
 )
 
-for i in range(50):
-    Curve(
-        drawing=d,
-        start=start,
-        end=end,
-        offset=offset1,
-        translate=(0, i + 360),
-        scale=(1, 1),
-        color=nord[9],
-        debug=False,
-    )
+start = (100, 500)
+end = (start[0] + 300, start[1] - 150)
+offset = (-25, 100)
+Curve(
+    drawing=d,
+    start=start,
+    end=end,
+    offset=offset,
+    scale=(1, 1),
+    height_offset=0,
+    color=nord[9],
+    debug=False,
+)
 
 
 d.save_svg("logo.svg")
