@@ -39,10 +39,21 @@ class Curve:
             drawing.append(self.path)
 
         if self.debug:
+            self.path = dw.Path(
+                stroke="#ff0000",
+                fill="none",
+                stroke_width=self.stroke_width,
+                transform=f"\
+                    translate(0, {i + self.height_offset}) \
+                    scale({self.scale[0]}, {self.scale[1]})",
+            )
+            self.path.M(*self.start).C(*self.handle1, *self.handle2, *self.end)
+            drawing.append(self.path)
+
             drawing.append(
                 dw.Circle(
-                    self.handle1[0] + self.translate[0],
-                    self.handle1[1] + self.translate[1],
+                    self.handle1[0],
+                    self.handle1[1],
                     5,
                     stroke="#ff0000",
                     fill="#ff0000",
@@ -50,8 +61,8 @@ class Curve:
             )
             drawing.append(
                 dw.Circle(
-                    self.handle2[0] + self.translate[0],
-                    self.handle2[1] + self.translate[1],
+                    self.handle2[0],
+                    self.handle2[1],
                     5,
                     stroke="#ff0000",
                     fill="#ff0000",
