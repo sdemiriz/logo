@@ -1,23 +1,5 @@
 import drawsvg as dw
-
-nord = [
-    "#2e3440",
-    "#3b4252",
-    "#434c5e",
-    "#4c566a",
-    "d8dee9",
-    "#e5e9f0",
-    "#eceff4",
-    "#8fbcbb",
-    "#88c0d0",
-    "#81a1c1",
-    "#5e81ac",
-    "#bf616a",
-    "#d08770",
-    "#ebc88b",
-    "#a3be8c",
-    "#b48ead",
-]
+import nord
 
 
 class Curve:
@@ -27,7 +9,6 @@ class Curve:
         start: tuple,
         end: tuple,
         offset: tuple,
-        translate: tuple,
         scale: tuple,
         height_offset: int,
         color: str,
@@ -37,7 +18,6 @@ class Curve:
         self.end = end
         self.offset = offset
         self.color = color
-        self.translate = translate
         self.scale = scale
         self.height_repeats = 50
         self.height_offset = height_offset
