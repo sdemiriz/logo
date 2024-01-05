@@ -14,7 +14,7 @@ curve_left = 350
 
 start_major = (curve_left, 350)
 size = (curve_width, major_curve_multiplier * curve_height)
-copy_offset = (0, -80)
+copy_offset = -80
 offset = (0, -100)
 
 c.Curve(
@@ -28,10 +28,10 @@ c.Curve(
 
 c.Curve(
     drawing=d,
-    start=(start_major[0] + copy_offset[0], start_major[1] + copy_offset[1]),
+    start=(start_major[0], start_major[1] + copy_offset),
     end=(
-        start_major[0] + size[0] + copy_offset[0],
-        start_major[1] + size[1] + copy_offset[1],
+        start_major[0] + size[0],
+        start_major[1] + size[1] + copy_offset,
     ),
     offset=offset,
     color=n.nord[10],
@@ -40,7 +40,7 @@ c.Curve(
 
 start_minor = (curve_left, 350)
 size = (curve_width, -minor_curve_multiplier * curve_height)
-copy_offset = (0, 250)
+copy_offset = 250
 offset = (-25, 100)
 c.Curve(
     drawing=d,
@@ -53,10 +53,10 @@ c.Curve(
 
 c.Curve(
     drawing=d,
-    start=(start_minor[0] + copy_offset[0], start_minor[1] + copy_offset[1]),
+    start=(start_minor[0], start_minor[1] + copy_offset),
     end=(
-        start_minor[0] + copy_offset[0] + size[0],
-        start_minor[1] + copy_offset[1] + size[1],
+        start_minor[0] + size[0],
+        start_minor[1] + copy_offset + size[1],
     ),
     offset=offset,
     height_offset=10,
