@@ -33,26 +33,27 @@ c.Curve(
     debug=False,
 )
 
-start = (100, 150)
-end = (start[0] + 300, start[1] - 150)
+start_major = (300, 300)
+size = (400, -120)
+copy_offset = (0, 350)
 offset = (-25, 100)
 c.Curve(
     drawing=d,
-    start=start,
-    end=end,
+    start=start_major,
+    end=(start_major[0] + size[0], start_major[1] + size[1]),
     offset=offset,
     height_offset=0,
     color=n.nord[9],
     debug=False,
 )
 
-start = (100, 500)
-end = (start[0] + 300, start[1] - 150)
-offset = (-25, 100)
 c.Curve(
     drawing=d,
-    start=start,
-    end=end,
+    start=(start_major[0] + copy_offset[0], start_major[1] + copy_offset[1]),
+    end=(
+        start_major[0] + copy_offset[0] + size[0],
+        start_major[1] + copy_offset[1] + size[1],
+    ),
     offset=offset,
     height_offset=0,
     color=n.nord[9],
