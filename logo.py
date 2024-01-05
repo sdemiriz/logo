@@ -84,46 +84,46 @@ d = dw.Drawing(1000, 1000, id_prefix="pic")
 d.append(dw.Rectangle(0, 0, 1000, 1000, fill=nord[1]))
 
 start = (100, 200)
-end = (400, 500)
+end = (start[0] + 300, start[1] + 300)
 offset = (0, -100)
-for i in range(0, 50):
-    Curve(
-        drawing=d,
-        start=start,
-        end=end,
-        offset=offset,
-        translate=(0, -i),
-        scale=(1, 1),
-        color=nord[10],
-        debug=False,
-    )
+Curve(
+    drawing=d,
+    start=start,
+    end=end,
+    offset=offset,
+    scale=(1, 1),
+    height_offset=-50,
+    color=nord[10],
+    debug=False,
+)
 
-for i in range(0, 50):
-    Curve(
-        drawing=d,
-        start=start,
-        end=end,
-        offset=offset,
-        translate=(0, -i - 90),
-        scale=(1, 1),
-        color=nord[10],
-        debug=False,
-    )
+start = (100, 100)
+end = (start[0] + 300, start[1] + 300)
+offset = (0, -100)
+Curve(
+    drawing=d,
+    start=start,
+    end=end,
+    offset=offset,
+    scale=(1, 1),
+    height_offset=-50,
+    color=nord[10],
+    debug=False,
+)
 
 start = (100, 150)
-end = (400, 0)
-offset1 = (-25, 100)
-for i in range(50):
-    Curve(
-        drawing=d,
-        start=start,
-        end=end,
-        offset=offset1,
-        translate=(0, i),
-        scale=(1, 1),
-        color=nord[9],
-        debug=False,
-    )
+end = (start[0] + 300, start[1] - 150)
+offset = (-25, 100)
+Curve(
+    drawing=d,
+    start=start,
+    end=end,
+    offset=offset,
+    scale=(1, 1),
+    height_offset=0,
+    color=nord[9],
+    debug=False,
+)
 
 for i in range(50):
     Curve(
