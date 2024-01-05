@@ -1,4 +1,5 @@
 import drawsvg as dw
+import curve as c
 import nord
 
 
@@ -66,7 +67,7 @@ d.append(dw.Rectangle(0, 0, 1000, 1000, fill=nord[1]))
 start = (100, 200)
 end = (start[0] + 300, start[1] + 300)
 offset = (0, -100)
-Curve(
+c.Curve(
     drawing=d,
     start=start,
     end=end,
@@ -80,7 +81,7 @@ Curve(
 start = (100, 100)
 end = (start[0] + 300, start[1] + 300)
 offset = (0, -100)
-Curve(
+c.Curve(
     drawing=d,
     start=start,
     end=end,
@@ -94,7 +95,7 @@ Curve(
 start = (100, 150)
 end = (start[0] + 300, start[1] - 150)
 offset = (-25, 100)
-Curve(
+c.Curve(
     drawing=d,
     start=start,
     end=end,
@@ -108,7 +109,7 @@ Curve(
 start = (100, 500)
 end = (start[0] + 300, start[1] - 150)
 offset = (-25, 100)
-Curve(
+c.Curve(
     drawing=d,
     start=start,
     end=end,
