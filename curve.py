@@ -18,7 +18,7 @@ class Curve:
         self.offset = offset
         self.color = color
         self.scale = scale
-        self.height_repeats = 50
+        self.height_repeats = 45
         self.height_offset = height_offset
         self.stroke_width = 2
         self.debug = debug
