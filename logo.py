@@ -10,7 +10,9 @@ major_curve_multiplier = 22
 curve_height = 10
 curve_width = 300
 
-start_major = (350, 350)
+curve_left = 350
+
+start_major = (curve_left, 350)
 size = (curve_width, major_curve_multiplier * curve_height)
 copy_offset = (0, -80)
 offset = (0, -100)
@@ -36,7 +38,7 @@ c.Curve(
     debug=False,
 )
 
-start_minor = (350, 350)
+start_minor = (curve_left, 350)
 size = (curve_width, -minor_curve_multiplier * curve_height)
 copy_offset = (0, 250)
 offset = (-25, 100)
