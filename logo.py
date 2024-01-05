@@ -2,15 +2,17 @@ import drawsvg as dw
 import curve as c
 import nord as n
 
-d = dw.Drawing(1000, 1000, id_prefix="pic")
-d.append(dw.Rectangle(0, 0, 1000, 1000, fill=n.nord[1]))
+WIDTH = 1000
+HEIGHT = 1000
+d = dw.Drawing(WIDTH, HEIGHT, id_prefix="pic")
+d.append(dw.Rectangle(0, 0, WIDTH, HEIGHT, fill=n.nord[1]))
 
 minor_curve_multiplier = 12
 major_curve_multiplier = 22
 curve_height = 10
 curve_width = 300
 
-curve_left = 350
+curve_left = (WIDTH - curve_width) / 2
 
 start_major = (curve_left, 400)
 size = (curve_width, major_curve_multiplier * curve_height)
