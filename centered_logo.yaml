@@ -1,0 +1,6 @@
+logo1:
+  type: "centered"
+  filename: "centered_logo.svg"
+  dimensions:
+    - 2560
+    - 1440
