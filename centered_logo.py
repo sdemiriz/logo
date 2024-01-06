@@ -24,84 +24,46 @@ class CenteredLogo:
         self.minor_curve_multiplier = 12
         self.major_curve_multiplier = 22
 
-        d = dw.Drawing(
-            self.canvas_dimensions[0], self.canvas_dimensions[1], id_prefix="pic"
+        self.curve_height = int(10 * self.logo_scale)
+        self.curve_width = int(300 * self.logo_scale)
+        self.thickness = int(42 * self.logo_scale)
+
+        self.copy_offset_major = int(-84 * self.logo_scale)
+        self.copy_offset_minor = self.copy_offset_major + (
+            (self.major_curve_multiplier + self.minor_curve_multiplier)
+            * self.curve_height
         )
-        d.append(
-            dw.Rectangle(
-                0,
-                0,
-                self.canvas_dimensions[0],
-                self.canvas_dimensions[1],
-                fill=self.background_color,
+
+        self.logo_origin = (
+            (self.canvas_dimensions[0] - self.curve_width) / 2,
+            (
+                self.canvas_dimensions[1]
+                - (self.major_curve_multiplier * self.curve_height)
+                - (self.copy_offset_major / 2)
             )
+            / 2,
         )
 
-        overall_scaling = 1.5
-
-        curve_height = int(10 * overall_scaling)
-        curve_width = int(300 * overall_scaling)
-        thickness = int(42 * overall_scaling)
-
-        copy_offset_major = int(-84 * overall_scaling)
-
-        curve_left = (self.canvas_dimensions[0] - curve_width) / 2
-        curve_top = (
-            self.canvas_dimensions[1]
-            - (self.major_curve_multiplier * curve_height)
-            - (copy_offset_major / 2)
-        ) / 2
-
-        start_major = (curve_left, curve_top)
-        size = (curve_width, self.major_curve_multiplier * curve_height)
-        end_major = (start_major[0] + size[0], start_major[1] + size[1])
-        offset = (0 * overall_scaling, -100 * overall_scaling)
-
-        c.Curve(
-            drawing=d,
-            start=start_major,
-            end=end_major,
-            thickness=thickness,
-            offset=offset,
-            color=self.major_curve_color,
-            debug=False,
+        self.major_curve_size = (
+            self.curve_width,
+            self.major_curve_multiplier * self.curve_height,
         )
-
-        c.Curve(
-            drawing=d,
-            start=(start_major[0], start_major[1] + copy_offset_major),
-            end=(end_major[0], end_major[1] + copy_offset_major),
-            thickness=thickness,
-            offset=offset,
-            color=self.major_curve_color,
-            debug=False,
+        self.major_curve_end = (
+            self.logo_origin[0] + self.major_curve_size[0],
+            self.logo_origin[1] + self.major_curve_size[1],
         )
+        self.major_curve_offset = (0 * self.logo_scale, -100 * logo_scale)
 
-        start_minor = (curve_left, curve_top)
-        size = (curve_width, -self.minor_curve_multiplier * curve_height)
-        end_minor = (start_minor[0] + size[0], start_minor[1] + size[1])
-        copy_offset_minor = copy_offset_major + (
-            (self.major_curve_multiplier + self.minor_curve_multiplier) * curve_height
+        self.minor_curve_size = (
+            self.curve_width,
+            -self.minor_curve_multiplier * self.curve_height,
         )
-        offset = (0, offset[1] * -1)
-
-        c.Curve(
-            drawing=d,
-            start=start_minor,
-            end=end_minor,
-            thickness=thickness,
-            offset=offset,
-            color=self.minor_curve_color,
-            debug=False,
+        self.minor_curve_end = (
+            self.logo_origin[0] + self.minor_curve_size[0],
+            self.logo_origin[1] + self.minor_curve_size[1],
         )
-
-        c.Curve(
-            drawing=d,
-            start=(start_minor[0], start_minor[1] + copy_offset_minor),
-            end=(end_minor[0], end_minor[1] + copy_offset_minor),
-            thickness=thickness,
-            offset=offset,
-            color=self.minor_curve_color,
-            debug=False,
+        self.minor_curve_offset = (
+            self.major_curve_offset[0],
+            self.major_curve_offset[1] * -1,
         )
         d.save_svg("logo.svg")
