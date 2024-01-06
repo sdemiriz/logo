@@ -7,13 +7,15 @@ HEIGHT = 1000
 d = dw.Drawing(WIDTH, HEIGHT, id_prefix="pic")
 d.append(dw.Rectangle(0, 0, WIDTH, HEIGHT, fill=n.nord[1]))
 
+overall_scaling = 1.5
+
 minor_curve_multiplier = 12
 major_curve_multiplier = 22
-curve_height = 10
-curve_width = 300
-thickness = 42
+curve_height = int(10 * overall_scaling)
+curve_width = int(300 * overall_scaling)
+thickness = int(42 * overall_scaling)
 
-copy_offset_major = -80
+copy_offset_major = int(-84 * overall_scaling)
 
 curve_left = (WIDTH - curve_width) / 2
 curve_top = (
