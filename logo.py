@@ -25,7 +25,7 @@ curve_top = (
 start_major = (curve_left, curve_top)
 size = (curve_width, major_curve_multiplier * curve_height)
 end_major = (start_major[0] + size[0], start_major[1] + size[1])
-offset = (0, -100)
+offset = (0 * overall_scaling, -100 * overall_scaling)
 
 c.Curve(
     drawing=d,
