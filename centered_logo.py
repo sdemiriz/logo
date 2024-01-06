@@ -4,6 +4,68 @@ import nord as n
 
 
 class CenteredLogo:
+    def draw_background(self):
+        self.d.append(
+            dw.Rectangle(
+                0,
+                0,
+                self.canvas_dimensions[0],
+                self.canvas_dimensions[1],
+                fill=self.background_color,
+            )
+        )
+
+    def draw_major_curves(self):
+        c.Curve(
+            drawing=self.d,
+            start=self.logo_origin,
+            end=self.major_curve_end,
+            thickness=self.thickness,
+            offset=self.major_curve_offset,
+            color=self.major_curve_color,
+            debug=False,
+        )
+
+        c.Curve(
+            drawing=self.d,
+            start=(self.logo_origin[0], self.logo_origin[1] + self.copy_offset_major),
+            end=(
+                self.major_curve_end[0],
+                self.major_curve_end[1] + self.copy_offset_major,
+            ),
+            thickness=self.thickness,
+            offset=self.major_curve_offset,
+            color=self.major_curve_color,
+            debug=False,
+        )
+
+    def draw_minor_curves(self):
+        c.Curve(
+            drawing=self.d,
+            start=self.logo_origin,
+            end=self.minor_curve_end,
+            thickness=self.thickness,
+            offset=self.minor_curve_offset,
+            color=self.minor_curve_color,
+            debug=False,
+        )
+
+        c.Curve(
+            drawing=self.d,
+            start=(self.logo_origin[0], self.logo_origin[1] + self.copy_offset_minor),
+            end=(
+                self.minor_curve_end[0],
+                self.minor_curve_end[1] + self.copy_offset_minor,
+            ),
+            thickness=self.thickness,
+            offset=self.minor_curve_offset,
+            color=self.minor_curve_color,
+            debug=False,
+        )
+
+    def save_svg(self):
+        self.d.save_svg(self.filename)
+
     def __init__(
         self,
         canvas_dimensions: tuple[int, int],
@@ -66,4 +128,10 @@ class CenteredLogo:
             self.major_curve_offset[0],
             self.major_curve_offset[1] * -1,
         )
-        d.save_svg("logo.svg")
+
+        self.filename = filename
+
+        self.draw_background()
+        self.draw_major_curves()
+        self.draw_minor_curves()
+        self.save_svg()
