@@ -7,6 +7,7 @@ class Curve:
         drawing: dw.Drawing,
         start: tuple,
         end: tuple,
+        thickness: int,
         offset: tuple,
         scale: tuple = (1, 1),
         height_offset: int = 0,
@@ -18,7 +19,7 @@ class Curve:
         self.offset = offset
         self.color = color
         self.scale = scale
-        self.height_repeats = 45
+        self.thickness = thickness
         self.height_offset = height_offset
         self.stroke_width = 2
         self.debug = debug
@@ -26,7 +27,7 @@ class Curve:
         self.handle1 = (self.start[0] - self.offset[0], self.start[1] - self.offset[1])
         self.handle2 = (self.end[0] + self.offset[0], self.end[1] + self.offset[1])
 
-        for i in range(self.height_repeats):
+        for i in range(self.thickness):
             self.path = dw.Path(
                 stroke=self.color,
                 fill="none",

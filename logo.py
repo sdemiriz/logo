@@ -11,6 +11,7 @@ minor_curve_multiplier = 12
 major_curve_multiplier = 22
 curve_height = 10
 curve_width = 300
+thickness = 1
 
 curve_left = (WIDTH - curve_width) / 2
 
@@ -23,6 +24,7 @@ c.Curve(
     drawing=d,
     start=start_major,
     end=(start_major[0] + size[0], start_major[1] + size[1]),
+    thickness=thickness,
     offset=offset,
     color=n.nord[10],
     debug=False,
@@ -35,6 +37,7 @@ c.Curve(
         start_major[0] + size[0],
         start_major[1] + size[1] + copy_offset,
     ),
+    thickness=thickness,
     offset=offset,
     color=n.nord[10],
     debug=False,
@@ -48,6 +51,7 @@ c.Curve(
     drawing=d,
     start=start_minor,
     end=(start_minor[0] + size[0], start_minor[1] + size[1]),
+    thickness=thickness,
     offset=offset,
     color=n.nord[9],
     debug=False,
@@ -60,6 +64,7 @@ c.Curve(
         start_minor[0] + size[0],
         start_minor[1] + copy_offset + size[1],
     ),
+    thickness=thickness,
     offset=offset,
     height_offset=10,
     color=n.nord[9],
