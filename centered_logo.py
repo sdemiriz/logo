@@ -1,6 +1,5 @@
 import drawsvg as dw
 import curve as c
-import nord as n
 
 
 class CenteredLogo:
@@ -76,6 +75,7 @@ class CenteredLogo:
         filename: str,
     ):
         self.canvas_dimensions = canvas_dimensions
+        self.d = dw.Drawing(self.canvas_dimensions[0], self.canvas_dimensions[1])
 
         self.background_color = background_color
         self.major_curve_color = major_curve_color
