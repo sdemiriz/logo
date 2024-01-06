@@ -2,8 +2,8 @@ import drawsvg as dw
 import curve as c
 import nord as n
 
-WIDTH = 1000
-HEIGHT = 1000
+WIDTH = 2560
+HEIGHT = 1440
 d = dw.Drawing(WIDTH, HEIGHT, id_prefix="pic")
 d.append(dw.Rectangle(0, 0, WIDTH, HEIGHT, fill=n.nord[1]))
 
