@@ -4,8 +4,23 @@ import nord as n
 
 
 class CenteredLogo:
-    def __init__(self, canvas_dimensions):
+    def __init__(
+        self,
+        canvas_dimensions: tuple[int, int],
+        background_color: str,
+        major_curve_color: str,
+        minor_curve_color: str,
+        logo_scale: float,
+        filename: str,
+    ):
         self.canvas_dimensions = canvas_dimensions
+
+        self.background_color = background_color
+        self.major_curve_color = major_curve_color
+        self.minor_curve_color = minor_curve_color
+
+        self.logo_scale = logo_scale
+
         self.minor_curve_multiplier = 12
         self.major_curve_multiplier = 22
 
@@ -18,7 +33,7 @@ class CenteredLogo:
                 0,
                 self.canvas_dimensions[0],
                 self.canvas_dimensions[1],
-                fill=n.nord[1],
+                fill=self.background_color,
             )
         )
 
@@ -48,7 +63,7 @@ class CenteredLogo:
             end=end_major,
             thickness=thickness,
             offset=offset,
-            color=n.nord[10],
+            color=self.major_curve_color,
             debug=False,
         )
 
@@ -58,7 +73,7 @@ class CenteredLogo:
             end=(end_major[0], end_major[1] + copy_offset_major),
             thickness=thickness,
             offset=offset,
-            color=n.nord[10],
+            color=self.major_curve_color,
             debug=False,
         )
 
@@ -76,7 +91,7 @@ class CenteredLogo:
             end=end_minor,
             thickness=thickness,
             offset=offset,
-            color=n.nord[9],
+            color=self.minor_curve_color,
             debug=False,
         )
 
@@ -86,7 +101,7 @@ class CenteredLogo:
             end=(end_minor[0], end_minor[1] + copy_offset_minor),
             thickness=thickness,
             offset=offset,
-            color=n.nord[9],
+            color=self.minor_curve_color,
             debug=False,
         )
         d.save_svg("logo.svg")
