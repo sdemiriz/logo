@@ -45,7 +45,7 @@ class Curve:
                 fill="none",
                 stroke_width=self.stroke_width,
                 transform=f"\
-                    translate(0, {i + self.height_offset}) \
+                    translate(0, {self.height_offset}) \
                     scale({self.scale[0]}, {self.scale[1]})",
             )
             self.path.M(*self.start).C(*self.handle1, *self.handle2, *self.end)
