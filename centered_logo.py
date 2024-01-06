@@ -63,7 +63,7 @@ class CenteredLogo:
         )
 
     def save_svg(self):
-        self.d.save_svg(self.filename)
+        self.d.save_svg("img/" + self.filename)
 
     def __init__(
         self,
