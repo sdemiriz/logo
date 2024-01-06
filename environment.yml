@@ -3,4 +3,5 @@ channels:
   - defaults
 dependencies:
   - drawsvg
+  - pyyaml
 prefix: /home/sdemiriz/.conda/envs/logo
