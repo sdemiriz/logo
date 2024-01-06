@@ -12,3 +12,4 @@ logo1:
   curve_thickness: 42
   major_curve_separation: 84
   logo_scale: 1.5
+  debug: True

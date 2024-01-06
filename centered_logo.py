@@ -22,7 +22,7 @@ class CenteredLogo:
             thickness=self.thickness,
             offset=self.major_curve_offset,
             color=self.major_curve_color,
-            debug=False,
+            debug=self.debug,
         )
 
         c.Curve(
@@ -35,7 +35,7 @@ class CenteredLogo:
             thickness=self.thickness,
             offset=self.major_curve_offset,
             color=self.major_curve_color,
-            debug=False,
+            debug=self.debug,
         )
 
     def draw_minor_curves(self):
@@ -46,7 +46,7 @@ class CenteredLogo:
             thickness=self.thickness,
             offset=self.minor_curve_offset,
             color=self.minor_curve_color,
-            debug=False,
+            debug=self.debug,
         )
 
         c.Curve(
@@ -59,7 +59,7 @@ class CenteredLogo:
             thickness=self.thickness,
             offset=self.minor_curve_offset,
             color=self.minor_curve_color,
-            debug=False,
+            debug=self.debug,
         )
 
     def save_svg(self):
@@ -77,6 +77,7 @@ class CenteredLogo:
         major_curve_separation: int,
         logo_scale: float,
         filename: str,
+        debug: bool,
     ):
         self.canvas_dimensions = canvas_dimensions
         self.d = dw.Drawing(self.canvas_dimensions[0], self.canvas_dimensions[1])
@@ -133,6 +134,7 @@ class CenteredLogo:
         )
 
         self.filename = filename
+        self.debug = debug
 
         self.draw_background()
         self.draw_major_curves()

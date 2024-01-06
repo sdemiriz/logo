@@ -17,4 +17,5 @@ for logo in config:
             major_curve_separation=config[logo]["major_curve_separation"],
             logo_scale=config[logo]["logo_scale"],
             filename=config[logo]["filename"],
+            debug=config[logo]["debug"],
         )
