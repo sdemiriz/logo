@@ -4,7 +4,7 @@ logo1:
   dimensions:
     - 2560
     - 1440
-  background_color: "#ff0000"
-  major_curve_color: "#ff0000"
-  minor_curve_color: "#ff0000"
+  background_color: "#2e3440"
+  major_curve_color: "#5e81ac"
+  minor_curve_color: "#81a1c1"
   logo_scale: 1.5
