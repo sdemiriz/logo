@@ -11,11 +11,16 @@ minor_curve_multiplier = 12
 major_curve_multiplier = 22
 curve_height = 10
 curve_width = 300
-thickness = 1
+thickness = 42
+
+copy_offset_major = -80
 
 curve_left = (WIDTH - curve_width) / 2
+curve_top = (
+    HEIGHT - (major_curve_multiplier * curve_height) - (copy_offset_major / 2)
+) / 2
 
-start_major = (curve_left, 400)
+start_major = (curve_left, curve_top)
 size = (curve_width, major_curve_multiplier * curve_height)
 end_major = (start_major[0] + size[0], start_major[1] + size[1])
 offset = (0, -100)
@@ -40,7 +45,7 @@ c.Curve(
     debug=False,
 )
 
-start_minor = (curve_left, 400)
+start_minor = (curve_left, curve_top)
 size = (curve_width, -minor_curve_multiplier * curve_height)
 end_minor = (start_minor[0] + size[0], start_minor[1] + size[1])
 copy_offset_minor = copy_offset_major + (
