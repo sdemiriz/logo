@@ -10,7 +10,6 @@ class Curve:
         thickness: int,
         offset: tuple,
         scale: tuple = (1, 1),
-        height_offset: int = 0,
         color: str = "#ff0000",
         debug: bool = False,
     ):
@@ -20,7 +19,6 @@ class Curve:
         self.color = color
         self.scale = scale
         self.thickness = thickness
-        self.height_offset = height_offset
         self.stroke_width = 2
         self.debug = debug
 
@@ -33,7 +31,7 @@ class Curve:
                 fill="none",
                 stroke_width=self.stroke_width,
                 transform=f"\
-                    translate(0, {i + self.height_offset}) \
+                    translate(0, {i}) \
                     scale({self.scale[0]}, {self.scale[1]})",
             )
             self.path.M(*self.start).C(*self.handle1, *self.handle2, *self.end)
@@ -44,9 +42,7 @@ class Curve:
                 stroke="#ff0000",
                 fill="none",
                 stroke_width=self.stroke_width,
-                transform=f"\
-                    translate(0, {self.height_offset}) \
-                    scale({self.scale[0]}, {self.scale[1]})",
+                transform=f"scale({self.scale[0]}, {self.scale[1]})",
             )
             self.path.M(*self.start).C(*self.handle1, *self.handle2, *self.end)
             drawing.append(self.path)
