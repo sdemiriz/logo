@@ -71,6 +71,10 @@ class CenteredLogo:
         background_color: str,
         major_curve_color: str,
         minor_curve_color: str,
+        curve_height: int,
+        curve_width: int,
+        curve_thickness: int,
+        major_curve_separation: int,
         logo_scale: float,
         filename: str,
     ):
@@ -80,17 +84,16 @@ class CenteredLogo:
         self.background_color = background_color
         self.major_curve_color = major_curve_color
         self.minor_curve_color = minor_curve_color
-
         self.logo_scale = logo_scale
 
         self.minor_curve_multiplier = 12
         self.major_curve_multiplier = 22
 
-        self.curve_height = int(10 * self.logo_scale)
-        self.curve_width = int(300 * self.logo_scale)
-        self.thickness = int(42 * self.logo_scale)
+        self.curve_height = int(curve_height * self.logo_scale)
+        self.curve_width = int(curve_width * self.logo_scale)
+        self.thickness = int(curve_thickness * self.logo_scale)
 
-        self.copy_offset_major = int(-84 * self.logo_scale)
+        self.copy_offset_major = int(-major_curve_separation * self.logo_scale)
         self.copy_offset_minor = self.copy_offset_major + (
             (self.major_curve_multiplier + self.minor_curve_multiplier)
             * self.curve_height
@@ -126,7 +129,7 @@ class CenteredLogo:
         )
         self.minor_curve_offset = (
             self.major_curve_offset[0],
-            self.major_curve_offset[1] * -1,
+            -self.major_curve_offset[1],
         )
 
         self.filename = filename
