@@ -50,7 +50,7 @@ required dependencies manually, activate the environment if working with `conda`
 ```
 git clone https://github.com/sdemiriz/logo.git
 cd logo/
-conda env create -n sdemiriz-logo --file environment -d
+conda env create -n sdemiriz-logo --file environment.yml -d
 conda activate sdemiriz-logo
 python logo.py
 ```
