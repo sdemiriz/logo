@@ -1,5 +1,6 @@
 name: logo
 channels:
+  - conda-forge
   - defaults
 dependencies:
   - drawsvg
