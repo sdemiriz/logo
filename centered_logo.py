@@ -63,7 +63,10 @@ class CenteredLogo:
         )
 
     def save_svg(self):
-        self.d.save_svg("img/" + self.filename)
+        self.d.save_svg("img/" + self.filename + ".svg")
+
+    def save_png(self):
+        self.d.save_png("img/" + self.filename + ".png")
 
     def __init__(
         self,
@@ -140,3 +143,4 @@ class CenteredLogo:
         self.draw_major_curves()
         self.draw_minor_curves()
         self.save_svg()
+        self.save_png()

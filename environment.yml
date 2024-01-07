@@ -1,8 +1,8 @@
 name: logo
 channels:
-  - conda-forge
   - defaults
 dependencies:
   - drawsvg
   - pyyaml
+  - cairosvg
 prefix: /home/sdemiriz/.conda/envs/logo
