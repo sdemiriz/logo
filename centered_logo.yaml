@@ -1,6 +1,6 @@
 logo1:
   type: "centered"
-  filename: "centered_logo"
+  filename: "centered_logo_2k"
   dimensions:
     - 2560
     - 1440
@@ -12,4 +12,20 @@ logo1:
   curve_thickness: 42
   major_curve_separation: 84
   logo_scale: 1.5
-  debug: False
+  debug: false
+
+logo2:
+  type: "centered"
+  filename: "no_background_4k"
+  dimensions:
+    - 4000
+    - 4000
+  background_color: "#00000000"
+  major_curve_color: "#5e81ac"
+  minor_curve_color: "#81a1c1"
+  curve_height: 10
+  curve_width: 300
+  curve_thickness: 42
+  major_curve_separation: 84
+  logo_scale: 10
+  debug: false
