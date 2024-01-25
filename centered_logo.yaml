@@ -29,3 +29,19 @@ logo2:
   major_curve_separation: 84
   logo_scale: 10
   debug: false
+
+logo3:
+  type: "centered"
+  filename: "dark_4k"
+  dimensions:
+    - 4000
+    - 4000
+  background_color: "#00000000"
+  major_curve_color: "#2e3440"
+  minor_curve_color: "#4c566a"
+  curve_height: 10
+  curve_width: 300
+  curve_thickness: 42
+  major_curve_separation: 84
+  logo_scale: 10
+  debug: false
