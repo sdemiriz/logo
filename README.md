@@ -1,4 +1,4 @@
-![sdemiriz_centered_logo](img/centered_logo.svg) 
+![sdemiriz_centered_logo](img/centered_logo_2k.svg) 
 
 # sdemiriz Personal Logo Design 
 Copyright, 2024
