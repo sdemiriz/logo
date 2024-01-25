@@ -45,3 +45,19 @@ logo3:
   major_curve_separation: 84
   logo_scale: 10
   debug: false
+
+logo4:
+  type: "centered"
+  filename: "light_4k"
+  dimensions:
+    - 4000
+    - 4000
+  background_color: "#00000000"
+  major_curve_color: "#d8dee9"
+  minor_curve_color: "#eceff4"
+  curve_height: 10
+  curve_width: 300
+  curve_thickness: 42
+  major_curve_separation: 84
+  logo_scale: 10
+  debug: false
