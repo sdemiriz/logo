@@ -127,15 +127,14 @@ class RepeatedLogo:
         self.filename = filename
         self.debug = debug
 
-        self.x_offset = 120
-        self.y_offset = 150
-
         self.draw_background()
 
-        x, y = 0, 0
-        while x <= self.canvas_dimensions[0]:
-            x += self.x_offset
+        self.x_offset, self.y_offset = 100, 100
+        self.x_stagger, self.y_stagger = 23, 23
 
+        x, y = -1000, -1000
+        counter = 0
+        while x <= self.canvas_dimensions[0]:
             while y <= self.canvas_dimensions[1]:
                 y += self.y_offset
 
@@ -152,6 +151,14 @@ class RepeatedLogo:
                 self.draw_minor_curves()
 
             y = 0
+            if counter % 2:
+                x += self.x_offset + self.x_stagger * counter
+                y += self.y_offset + self.y_stagger * counter
+            else:
+                x += self.x_offset
+                y += self.y_offset
+
+            counter += 1
 
         self.save_svg()
         self.save_png()
