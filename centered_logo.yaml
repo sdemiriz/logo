@@ -61,3 +61,19 @@ logo4:
   major_curve_separation: 84
   logo_scale: 10
   debug: false
+
+logo5:
+  type: "repeated"
+  filename: "repeated_logo"
+  dimensions:
+    - 2560
+    - 1440
+  background_color: "#2e3440"
+  major_curve_color: "#5e81ac"
+  minor_curve_color: "#81a1c1"
+  curve_height: 10
+  curve_width: 300
+  curve_thickness: 42
+  major_curve_separation: 84
+  logo_scale: 1.5
+  debug: false
