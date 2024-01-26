@@ -109,33 +109,15 @@ class RepeatedLogo:
             * self.curve_height
         )
 
-        self.logo_origin = (
-            (self.canvas_dimensions[0] - self.curve_width) / 2,
-            (
-                self.canvas_dimensions[1]
-                - (self.major_curve_multiplier * self.curve_height)
-                - (self.copy_offset_major / 2)
-            )
-            / 2,
-        )
-
         self.major_curve_size = (
             self.curve_width,
             self.major_curve_multiplier * self.curve_height,
-        )
-        self.major_curve_end = (
-            self.logo_origin[0] + self.major_curve_size[0],
-            self.logo_origin[1] + self.major_curve_size[1],
         )
         self.major_curve_offset = (0 * self.logo_scale, -100 * logo_scale)
 
         self.minor_curve_size = (
             self.curve_width,
             -self.minor_curve_multiplier * self.curve_height,
-        )
-        self.minor_curve_end = (
-            self.logo_origin[0] + self.minor_curve_size[0],
-            self.logo_origin[1] + self.minor_curve_size[1],
         )
         self.minor_curve_offset = (
             self.major_curve_offset[0],
@@ -145,8 +127,31 @@ class RepeatedLogo:
         self.filename = filename
         self.debug = debug
 
+        self.x_offset = 120
+        self.y_offset = 150
+
         self.draw_background()
-        self.draw_major_curves()
-        self.draw_minor_curves()
+
+        x, y = 0, 0
+        while x <= self.canvas_dimensions[0]:
+            x += self.x_offset
+
+            while y <= self.canvas_dimensions[1]:
+                y += self.y_offset
+
+                self.logo_origin = (x, y)
+                self.major_curve_end = (
+                    self.logo_origin[0] + self.major_curve_size[0],
+                    self.logo_origin[1] + self.major_curve_size[1],
+                )
+                self.minor_curve_end = (
+                    self.logo_origin[0] + self.minor_curve_size[0],
+                    self.logo_origin[1] + self.minor_curve_size[1],
+                )
+                self.draw_major_curves()
+                self.draw_minor_curves()
+
+            y = 0
+
         self.save_svg()
         self.save_png()
