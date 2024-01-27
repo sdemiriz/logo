@@ -187,6 +187,11 @@ class RepeatedLogo:
         filename: str,
         debug: bool,
     ):
+        # Define output name and use of debug mode
+        self.filename = filename
+        self.debug = debug
+
+        # Set up image and color background
         self.canvas_dimensions = canvas_dimensions
         self.d = dw.Drawing(self.canvas_dimensions[0], self.canvas_dimensions[1])
 
