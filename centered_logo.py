@@ -136,10 +136,9 @@ class CenteredLogo:
         # Ingest curve related parameters
         self.major_curve_color = major_curve_color
         self.minor_curve_color = minor_curve_color
+        self.minor_curve_multiplier = minor_curve_multiplier
+        self.major_curve_multiplier = major_curve_multiplier
         self.logo_scale = logo_scale
-
-        self.minor_curve_multiplier = 12
-        self.major_curve_multiplier = 22
 
         self.curve_height = int(curve_height * self.logo_scale)
         self.curve_width = int(curve_width * self.logo_scale)
@@ -184,14 +183,6 @@ class CenteredLogo:
             -self.major_curve_offset[1],
         )
 
-        self.filename = filename
-        self.debug = debug
-
-        self.draw_background(
-            self.canvas_dimensions[0],
-            self.canvas_dimensions[1],
-            self.background_color,
-        )
         self.draw_major_curves(
             drawing=self.d,
             start=self.logo_origin,
