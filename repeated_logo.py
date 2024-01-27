@@ -159,11 +159,11 @@ class RepeatedLogo:
             y = 0
             x += self.x_offset
 
-    def save_svg(self):
-        self.d.save_svg("img/" + self.filename + ".svg")
+    def save_svg(self, filename):
+        self.d.save_svg(f"img/{filename}.svg")
 
-    def save_png(self):
-        self.d.save_png("img/" + self.filename + ".png")
+    def save_png(self, filename):
+        self.d.save_png(f"img/{filename}.png")
 
     def __init__(
         self,
