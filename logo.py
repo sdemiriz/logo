@@ -2,10 +2,10 @@ import centered_logo as center
 import repeated_logo as repeat
 import yaml
 
-with open("centered_logo.yaml", "r") as file:
+with open("image_config.yaml", "r") as file:
     image_config = yaml.safe_load(file)
 
-with open("logo.yaml", "r") as file:
+with open("logo_config.yaml", "r") as file:
     logo_config = yaml.safe_load(file)
 
 for logo in image_config:
