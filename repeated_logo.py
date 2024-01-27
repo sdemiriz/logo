@@ -97,8 +97,8 @@ class RepeatedLogo:
         self.x_offset, self.y_offset = self.pattern_repeat
 
         x, y = 0, 0
-        while x <= self.canvas_dimensions[0]:
-            while y <= self.canvas_dimensions[1]:
+        while x <= self.canvas_dimensions[0] + 1000:
+            while y <= self.canvas_dimensions[1] + 1000:
                 self.logo_origin = (x - self.x_offset / 2, y - self.y_offset / 2)
                 self.major_curve_end = (
                     self.logo_origin[0] + self.major_curve_size[0],
