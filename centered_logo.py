@@ -190,5 +190,5 @@ class CenteredLogo:
             color=self.minor_curve_color,
             debug=self.debug,
         )
-        self.save_svg()
-        self.save_png()
+        self.save_svg(self.filename)
+        self.save_png(self.filename)
