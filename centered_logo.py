@@ -121,9 +121,19 @@ class CenteredLogo:
 
         # Set up image and color background
         self.canvas_dimensions = canvas_dimensions
-        self.d = dw.Drawing(self.canvas_dimensions[0], self.canvas_dimensions[1])
+        self.d = dw.Drawing(
+            self.canvas_dimensions[0],
+            self.canvas_dimensions[1],
+        )
 
         self.background_color = background_color
+        self.draw_background(
+            self.canvas_dimensions[0],
+            self.canvas_dimensions[1],
+            self.background_color,
+        )
+
+        # Ingest curve related parameters
         self.major_curve_color = major_curve_color
         self.minor_curve_color = minor_curve_color
         self.logo_scale = logo_scale
