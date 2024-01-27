@@ -3,14 +3,14 @@ import curve as c
 
 
 class RepeatedLogo:
-    def draw_background(self):
+    def draw_background(self, x_dimension, y_dimension, background_color):
         self.d.append(
             dw.Rectangle(
-                0,
-                0,
-                self.canvas_dimensions[0],
-                self.canvas_dimensions[1],
-                fill=self.background_color,
+                x=0,
+                y=0,
+                width=x_dimension,
+                height=y_dimension,
+                fill=background_color,
             )
         )
 
@@ -164,7 +164,9 @@ class RepeatedLogo:
         self.filename = filename
         self.debug = debug
 
-        self.draw_background()
+        self.draw_background(
+            self.canvas_dimensions[0], self.canvas_dimensions[1], self.background_color
+        )
 
         self.draw_repeats()
         self.save_svg()
