@@ -14,58 +14,78 @@ class RepeatedLogo:
             )
         )
 
-    def draw_major_curves(self):
+    def draw_major_curves(
+        self,
+        drawing,
+        start,
+        end,
+        thickness,
+        offset,
+        copy_offset,
+        color,
+        debug,
+    ):
         c.Curve(
-            drawing=self.d,
-            start=self.logo_origin,
-            end=self.major_curve_end,
-            thickness=self.thickness,
-            offset=self.major_curve_offset,
-            color=self.major_curve_color,
-            debug=self.debug,
+            drawing=drawing,
+            start=start,
+            end=end,
+            thickness=thickness,
+            offset=offset,
+            color=color,
+            debug=debug,
         )
 
         c.Curve(
-            drawing=self.d,
+            drawing=drawing,
             start=(
-                self.logo_origin[0],
-                self.logo_origin[1] + self.copy_offset_major,
+                start[0],
+                start[1] + copy_offset,
             ),
             end=(
-                self.major_curve_end[0],
-                self.major_curve_end[1] + self.copy_offset_major,
+                end[0],
+                end[1] + copy_offset,
             ),
-            thickness=self.thickness,
-            offset=self.major_curve_offset,
-            color=self.major_curve_color,
-            debug=self.debug,
+            thickness=thickness,
+            offset=offset,
+            color=color,
+            debug=debug,
         )
 
-    def draw_minor_curves(self):
+    def draw_minor_curves(
+        self,
+        drawing,
+        start,
+        end,
+        thickness,
+        offset,
+        copy_offset,
+        color,
+        debug,
+    ):
         c.Curve(
-            drawing=self.d,
-            start=self.logo_origin,
-            end=self.minor_curve_end,
-            thickness=self.thickness,
-            offset=self.minor_curve_offset,
-            color=self.minor_curve_color,
-            debug=self.debug,
+            drawing=drawing,
+            start=start,
+            end=end,
+            thickness=thickness,
+            offset=offset,
+            color=color,
+            debug=debug,
         )
 
         c.Curve(
-            drawing=self.d,
+            drawing=drawing,
             start=(
-                self.logo_origin[0],
-                self.logo_origin[1] + self.copy_offset_minor,
+                start[0],
+                start[1] + copy_offset,
             ),
             end=(
-                self.minor_curve_end[0],
-                self.minor_curve_end[1] + self.copy_offset_minor,
+                end[0],
+                end[1] + copy_offset,
             ),
-            thickness=self.thickness,
-            offset=self.minor_curve_offset,
-            color=self.minor_curve_color,
-            debug=self.debug,
+            thickness=thickness,
+            offset=offset,
+            color=color,
+            debug=debug,
         )
 
     def draw_repeats(self):
@@ -83,8 +103,26 @@ class RepeatedLogo:
                     self.logo_origin[0] + self.minor_curve_size[0],
                     self.logo_origin[1] + self.minor_curve_size[1],
                 )
-                self.draw_major_curves()
-                self.draw_minor_curves()
+                self.draw_major_curves(
+                    drawing=self.d,
+                    start=self.logo_origin,
+                    end=self.major_curve_end,
+                    thickness=self.thickness,
+                    offset=self.major_curve_offset,
+                    copy_offset=self.copy_offset_major,
+                    color=self.major_curve_color,
+                    debug=self.debug,
+                )
+                self.draw_minor_curves(
+                    drawing=self.d,
+                    start=self.logo_origin,
+                    end=self.minor_curve_end,
+                    thickness=self.thickness,
+                    offset=self.minor_curve_offset,
+                    copy_offset=self.copy_offset_minor,
+                    color=self.minor_curve_color,
+                    debug=self.debug,
+                )
 
                 self.logo_origin = (x, y)
                 self.major_curve_end = (
@@ -95,8 +133,26 @@ class RepeatedLogo:
                     self.logo_origin[0] + self.minor_curve_size[0],
                     self.logo_origin[1] + self.minor_curve_size[1],
                 )
-                self.draw_major_curves()
-                self.draw_minor_curves()
+                self.draw_major_curves(
+                    drawing=self.d,
+                    start=self.logo_origin,
+                    end=self.major_curve_end,
+                    thickness=self.thickness,
+                    offset=self.major_curve_offset,
+                    copy_offset=self.copy_offset_major,
+                    color=self.major_curve_color,
+                    debug=self.debug,
+                )
+                self.draw_minor_curves(
+                    drawing=self.d,
+                    start=self.logo_origin,
+                    end=self.minor_curve_end,
+                    thickness=self.thickness,
+                    offset=self.minor_curve_offset,
+                    copy_offset=self.copy_offset_minor,
+                    color=self.minor_curve_color,
+                    debug=self.debug,
+                )
 
                 y += self.y_offset
 
