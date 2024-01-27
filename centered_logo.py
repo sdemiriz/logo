@@ -3,7 +3,12 @@ import curve as c
 
 
 class CenteredLogo:
-    def draw_background(self, x_dimension, y_dimension, background_color):
+    def draw_background(
+        self,
+        x_dimension,
+        y_dimension,
+        background_color,
+    ):
         self.d.append(
             dw.Rectangle(
                 x=0,
@@ -103,7 +108,9 @@ class CenteredLogo:
         curve_height: int,
         curve_width: int,
         curve_thickness: int,
-        major_curve_separation: int,
+        separation: int,
+        major_curve_multiplier: int,
+        minor_curve_multiplier: int,
         logo_scale: float,
         filename: str,
         debug: bool,
@@ -123,7 +130,7 @@ class CenteredLogo:
         self.curve_width = int(curve_width * self.logo_scale)
         self.thickness = int(curve_thickness * self.logo_scale)
 
-        self.copy_offset_major = int(-major_curve_separation * self.logo_scale)
+        self.copy_offset_major = int(-separation * self.logo_scale)
         self.copy_offset_minor = self.copy_offset_major + (
             (self.major_curve_multiplier + self.minor_curve_multiplier)
             * self.curve_height

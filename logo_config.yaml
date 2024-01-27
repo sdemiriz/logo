@@ -1,4 +1,6 @@
 curve_height: 10
 curve_width: 300
 curve_thickness: 42
-major_curve_separation: 84
+separation: 84
+minor_curve_multiplier: 12
+major_curve_multiplier: 22

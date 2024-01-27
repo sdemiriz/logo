@@ -21,7 +21,9 @@ for logo in image_config:
             curve_height=logo_config["curve_height"],
             curve_width=logo_config["curve_width"],
             curve_thickness=logo_config["curve_thickness"],
-            major_curve_separation=logo_config["major_curve_separation"],
+            separation=logo_config["separation"],
+            major_curve_multiplier=logo_config["major_curve_multiplier"],
+            minor_curve_multiplier=logo_config["minor_curve_multiplier"],
         )
 
     if image_config[logo]["type"] == "repeated":
@@ -37,5 +39,7 @@ for logo in image_config:
             curve_height=logo_config["curve_height"],
             curve_width=logo_config["curve_width"],
             curve_thickness=logo_config["curve_thickness"],
-            major_curve_separation=logo_config["major_curve_separation"],
+            separation=logo_config["separation"],
+            major_curve_multiplier=logo_config["major_curve_multiplier"],
+            minor_curve_multiplier=logo_config["minor_curve_multiplier"],
         )
