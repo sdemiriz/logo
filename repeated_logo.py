@@ -68,6 +68,41 @@ class RepeatedLogo:
             debug=self.debug,
         )
 
+    def draw_repeats(self):
+        self.x_offset, self.y_offset = self.pattern_repeat
+
+        x, y = 0, 0
+        while x <= self.canvas_dimensions[0]:
+            while y <= self.canvas_dimensions[1]:
+                self.logo_origin = (x - self.x_offset / 2, y - self.y_offset / 2)
+                self.major_curve_end = (
+                    self.logo_origin[0] + self.major_curve_size[0],
+                    self.logo_origin[1] + self.major_curve_size[1],
+                )
+                self.minor_curve_end = (
+                    self.logo_origin[0] + self.minor_curve_size[0],
+                    self.logo_origin[1] + self.minor_curve_size[1],
+                )
+                self.draw_major_curves()
+                self.draw_minor_curves()
+
+                self.logo_origin = (x, y)
+                self.major_curve_end = (
+                    self.logo_origin[0] + self.major_curve_size[0],
+                    self.logo_origin[1] + self.major_curve_size[1],
+                )
+                self.minor_curve_end = (
+                    self.logo_origin[0] + self.minor_curve_size[0],
+                    self.logo_origin[1] + self.minor_curve_size[1],
+                )
+                self.draw_major_curves()
+                self.draw_minor_curves()
+
+                y += self.y_offset
+
+            y = 0
+            x += self.x_offset
+
     def save_svg(self):
         self.d.save_svg("img/" + self.filename + ".svg")
 
@@ -85,6 +120,7 @@ class RepeatedLogo:
         curve_thickness: int,
         major_curve_separation: int,
         logo_scale: float,
+        pattern_repeat: tuple[int, int],
         filename: str,
         debug: bool,
     ):
@@ -95,6 +131,7 @@ class RepeatedLogo:
         self.major_curve_color = major_curve_color
         self.minor_curve_color = minor_curve_color
         self.logo_scale = logo_scale
+        self.pattern_repeat = pattern_repeat
 
         self.minor_curve_multiplier = 12
         self.major_curve_multiplier = 22
@@ -129,39 +166,6 @@ class RepeatedLogo:
 
         self.draw_background()
 
-        self.x_offset, self.y_offset = 200, 100
-
-        x, y = 0, 0
-        while x <= self.canvas_dimensions[0]:
-            while y <= self.canvas_dimensions[1]:
-                self.logo_origin = (x - self.x_offset / 2, y - self.y_offset / 2)
-                self.major_curve_end = (
-                    self.logo_origin[0] + self.major_curve_size[0],
-                    self.logo_origin[1] + self.major_curve_size[1],
-                )
-                self.minor_curve_end = (
-                    self.logo_origin[0] + self.minor_curve_size[0],
-                    self.logo_origin[1] + self.minor_curve_size[1],
-                )
-                self.draw_major_curves()
-                self.draw_minor_curves()
-
-                self.logo_origin = (x, y)
-                self.major_curve_end = (
-                    self.logo_origin[0] + self.major_curve_size[0],
-                    self.logo_origin[1] + self.major_curve_size[1],
-                )
-                self.minor_curve_end = (
-                    self.logo_origin[0] + self.minor_curve_size[0],
-                    self.logo_origin[1] + self.minor_curve_size[1],
-                )
-                self.draw_major_curves()
-                self.draw_minor_curves()
-
-                y += self.y_offset
-
-            y = 0
-            x += self.x_offset
-
+        self.draw_repeats()
         self.save_svg()
         self.save_png()

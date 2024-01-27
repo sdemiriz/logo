@@ -76,4 +76,7 @@ logo5:
   curve_thickness: 42
   major_curve_separation: 84
   logo_scale: 0.1
+  pattern_repeat:
+    - 200
+    - 100
   debug: false

@@ -32,6 +32,7 @@ for logo in config:
             curve_thickness=config[logo]["curve_thickness"],
             major_curve_separation=config[logo]["major_curve_separation"],
             logo_scale=config[logo]["logo_scale"],
+            pattern_repeat=config[logo]["pattern_repeat"],
             filename=config[logo]["filename"],
             debug=config[logo]["debug"],
         )
