@@ -19,6 +19,28 @@ class CenteredLogo:
             )
         )
 
+    def draw_curve(
+        self,
+        drawing: dw.Drawing,
+        start: tuple[int, int],
+        end: tuple[int, int],
+        thickness: int,
+        offset: int,
+        copy_offset: int,
+        color: str,
+        debug: bool,
+    ):
+        c.Curve(
+            drawing=drawing,
+            start=start,
+            end=end,
+            thickness=thickness,
+            offset=offset,
+            copy_offset=copy_offset,
+            color=color,
+            debug=debug,
+        )
+
     def draw_major_curves(
         self,
         drawing,
