@@ -162,16 +162,19 @@ class CenteredLogo:
         self.major_curve_multiplier = major_curve_multiplier
         self.logo_scale = logo_scale
 
+        # Calculate shared curve parameters
         self.curve_height = int(curve_height * self.logo_scale)
         self.curve_width = int(curve_width * self.logo_scale)
         self.thickness = int(curve_thickness * self.logo_scale)
 
+        # Calculate values relating to the two halves of the logo
         self.copy_offset_major = int(-separation * self.logo_scale)
         self.copy_offset_minor = self.copy_offset_major + (
             (self.major_curve_multiplier + self.minor_curve_multiplier)
             * self.curve_height
         )
 
+        # Calculate centered logo origin
         self.logo_origin = (
             (self.canvas_dimensions[0] - self.curve_width) / 2,
             (
@@ -182,6 +185,7 @@ class CenteredLogo:
             / 2,
         )
 
+        # Calculate major curve parameters
         self.major_curve_size = (
             self.curve_width,
             self.major_curve_multiplier * self.curve_height,
@@ -192,6 +196,7 @@ class CenteredLogo:
         )
         self.major_curve_offset = (0 * self.logo_scale, -100 * logo_scale)
 
+        # Calculate minor curve parameters
         self.minor_curve_size = (
             self.curve_width,
             -self.minor_curve_multiplier * self.curve_height,
@@ -205,6 +210,7 @@ class CenteredLogo:
             -self.major_curve_offset[1],
         )
 
+        # Draw
         self.draw_major_curves(
             drawing=self.d,
             start=self.logo_origin,
@@ -225,5 +231,7 @@ class CenteredLogo:
             color=self.minor_curve_color,
             debug=self.debug,
         )
+
+        # Save to file(s)
         self.save_svg(self.filename)
         self.save_png(self.filename)
