@@ -52,7 +52,7 @@ class CenteredLogo:
         color,
         debug,
     ):
-        c.Curve(
+        self.draw_curve(
             drawing=drawing,
             start=start,
             end=end,
@@ -62,7 +62,7 @@ class CenteredLogo:
             debug=debug,
         )
 
-        c.Curve(
+        self.draw_curve(
             drawing=drawing,
             start=(
                 start[0],
@@ -89,7 +89,7 @@ class CenteredLogo:
         color,
         debug,
     ):
-        c.Curve(
+        self.draw_curve(
             drawing=drawing,
             start=start,
             end=end,
@@ -99,7 +99,7 @@ class CenteredLogo:
             debug=debug,
         )
 
-        c.Curve(
+        self.draw_curve(
             drawing=drawing,
             start=(
                 start[0],

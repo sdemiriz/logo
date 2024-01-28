@@ -41,7 +41,28 @@ class RepeatedLogo:
             debug=debug,
         )
 
-        c.Curve(
+    def draw_major_curves(
+        self,
+        drawing: dw.Drawing,
+        start: tuple[int, int],
+        end: tuple[int, int],
+        thickness: int,
+        offset: int,
+        copy_offset: int,
+        color: str,
+        debug: bool,
+    ):
+        self.draw_curve(
+            drawing=drawing,
+            start=start,
+            end=end,
+            thickness=thickness,
+            offset=offset,
+            color=color,
+            debug=debug,
+        )
+
+        self.draw_curve(
             drawing=drawing,
             start=(
                 start[0],
@@ -68,7 +89,7 @@ class RepeatedLogo:
         color,
         debug,
     ):
-        c.Curve(
+        self.draw_curve(
             drawing=drawing,
             start=start,
             end=end,
@@ -78,7 +99,7 @@ class RepeatedLogo:
             debug=debug,
         )
 
-        c.Curve(
+        self.draw_curve(
             drawing=drawing,
             start=(
                 start[0],
