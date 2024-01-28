@@ -115,10 +115,10 @@ class CenteredLogo:
             debug=debug,
         )
 
-    def save_svg(self, filename):
+    def save_svg(self, filename: str):
         self.d.save_svg(f"img/{filename}.svg")
 
-    def save_png(self, filename):
+    def save_png(self, filename: str):
         self.d.save_png(f"img/{filename}.png")
 
     def __init__(
