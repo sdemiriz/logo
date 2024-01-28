@@ -80,14 +80,14 @@ class RepeatedLogo:
 
     def draw_minor_curves(
         self,
-        drawing,
-        start,
-        end,
-        thickness,
-        offset,
-        copy_offset,
-        color,
-        debug,
+        drawing: dw.Drawing,
+        start: tuple[int, int],
+        end: tuple[int, int],
+        thickness: int,
+        offset: int,
+        copy_offset: int,
+        color: str,
+        debug: bool,
     ):
         self.draw_curve(
             drawing=drawing,
