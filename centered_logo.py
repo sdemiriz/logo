@@ -5,9 +5,9 @@ import curve as c
 class CenteredLogo:
     def draw_background(
         self,
-        x_dimension,
-        y_dimension,
-        background_color,
+        x_dimension: int,
+        y_dimension: int,
+        background_color: str,
     ):
         self.d.append(
             dw.Rectangle(
