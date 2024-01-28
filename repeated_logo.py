@@ -266,5 +266,5 @@ class RepeatedLogo:
         self.draw_repeats()
 
         # Save to file(s)
-        self.save_svg(self.filename)
-        self.save_png(self.filename)
+        self.save_svg(filename=self.filename)
+        self.save_png(filename=self.filename)
