@@ -26,7 +26,6 @@ class RepeatedLogo:
         end: tuple[int, int],
         thickness: int,
         offset: int,
-        copy_offset: int,
         color: str,
         debug: bool,
     ):
@@ -36,7 +35,6 @@ class RepeatedLogo:
             end=end,
             thickness=thickness,
             offset=offset,
-            copy_offset=copy_offset,
             color=color,
             debug=debug,
         )
