@@ -113,8 +113,8 @@ class RepeatedLogo:
             debug=debug,
         )
 
-    def draw_repeats(self):
-        self.x_offset, self.y_offset = self.pattern_repeat
+    def draw_repeats(self, pattern_repeat):
+        self.x_offset, self.y_offset = pattern_repeat
 
         x, y = 0, 0
         while x <= self.canvas_dimensions[0] + 1000:
