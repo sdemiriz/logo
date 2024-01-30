@@ -1,5 +1,5 @@
-import centered_logo as center
-import repeated_logo as repeat
+import CenteredLogo as center
+import RepeatedLogo as repeat
 import yaml
 
 with open("image_config.yaml", "r") as file:
