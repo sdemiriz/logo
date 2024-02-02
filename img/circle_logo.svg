@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="400" height="400" viewBox="0 0 400 400">
+<defs>
+</defs>
+<circle cx="200" cy="200" r="200" fill="#2e3440" />
+<path d="M185.0,191.0 C185.0,201.0,215.0,203.0,215.0,213.0" stroke="#5e81ac" fill="none" stroke-width="2" transform="                    translate(0, 0)                     scale(1, 1)" />
+<path d="M185.0,191.0 C185.0,201.0,215.0,203.0,215.0,213.0" stroke="#5e81ac" fill="none" stroke-width="2" transform="                    translate(0, 1)                     scale(1, 1)" />
+<path d="M185.0,191.0 C185.0,201.0,215.0,203.0,215.0,213.0" stroke="#5e81ac" fill="none" stroke-width="2" transform="                    translate(0, 2)                     scale(1, 1)" />
+<path d="M185.0,191.0 C185.0,201.0,215.0,203.0,215.0,213.0" stroke="#5e81ac" fill="none" stroke-width="2" transform="                    translate(0, 3)                     scale(1, 1)" />
+<path d="M185.0,183.0 C185.0,193.0,215.0,195.0,215.0,205.0" stroke="#5e81ac" fill="none" stroke-width="2" transform="                    translate(0, 0)                     scale(1, 1)" />
+<path d="M185.0,183.0 C185.0,193.0,215.0,195.0,215.0,205.0" stroke="#5e81ac" fill="none" stroke-width="2" transform="                    translate(0, 1)                     scale(1, 1)" />
+<path d="M185.0,183.0 C185.0,193.0,215.0,195.0,215.0,205.0" stroke="#5e81ac" fill="none" stroke-width="2" transform="                    translate(0, 2)                     scale(1, 1)" />
+<path d="M185.0,183.0 C185.0,193.0,215.0,195.0,215.0,205.0" stroke="#5e81ac" fill="none" stroke-width="2" transform="                    translate(0, 3)                     scale(1, 1)" />
+<path d="M185.0,191.0 C185.0,181.0,215.0,189.0,215.0,179.0" stroke="#81a1c1" fill="none" stroke-width="2" transform="                    translate(0, 0)                     scale(1, 1)" />
+<path d="M185.0,191.0 C185.0,181.0,215.0,189.0,215.0,179.0" stroke="#81a1c1" fill="none" stroke-width="2" transform="                    translate(0, 1)                     scale(1, 1)" />
+<path d="M185.0,191.0 C185.0,181.0,215.0,189.0,215.0,179.0" stroke="#81a1c1" fill="none" stroke-width="2" transform="                    translate(0, 2)                     scale(1, 1)" />
+<path d="M185.0,191.0 C185.0,181.0,215.0,189.0,215.0,179.0" stroke="#81a1c1" fill="none" stroke-width="2" transform="                    translate(0, 3)                     scale(1, 1)" />
+<path d="M185.0,217.0 C185.0,207.0,215.0,215.0,215.0,205.0" stroke="#81a1c1" fill="none" stroke-width="2" transform="                    translate(0, 0)                     scale(1, 1)" />
+<path d="M185.0,217.0 C185.0,207.0,215.0,215.0,215.0,205.0" stroke="#81a1c1" fill="none" stroke-width="2" transform="                    translate(0, 1)                     scale(1, 1)" />
+<path d="M185.0,217.0 C185.0,207.0,215.0,215.0,215.0,205.0" stroke="#81a1c1" fill="none" stroke-width="2" transform="                    translate(0, 2)                     scale(1, 1)" />
+<path d="M185.0,217.0 C185.0,207.0,215.0,215.0,215.0,205.0" stroke="#81a1c1" fill="none" stroke-width="2" transform="                    translate(0, 3)                     scale(1, 1)" />
+</svg>

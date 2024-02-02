@@ -60,3 +60,13 @@ logo5:
     - 200
     - 100
   debug: false
+
+logo6:
+  type: "circle"
+  filename: "circle_logo"
+  circle_radius: 200
+  background_color: "#2e3440"
+  major_curve_color: "#5e81ac"
+  minor_curve_color: "#81a1c1"
+  logo_scale: 0.1
+  debug: false
